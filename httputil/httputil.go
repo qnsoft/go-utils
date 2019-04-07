@@ -6,17 +6,17 @@ import (
 	"time"
 	"strings"
 	"net/url"
-	"github.com/liuchonglin/go-utils"
 	"encoding/json"
 	"os"
 	"mime/multipart"
 	"bytes"
 	"io"
+	"fmt"
 )
 
 const (
-	FormContentType      = "application/x-www-form-urlencoded;charset=utf-8"
-	JsonContentType      = "application/json;charset=utf-8"
+	FormContentType      = "application/x-www-form-urlencoded"
+	JsonContentType      = "application/json"
 	MultipartContentType = "multipart/form-data"
 )
 
@@ -24,12 +24,8 @@ const (
 type httpRequest struct {
 	// 网关
 	Url string `json:"url"`
-	// 数据类型
-	ContentType string `json:"contentType"`
 	// 请求头
 	Header map[string]string `json:"header"`
-	// 请求体
-	Body map[string]string `json:"body"`
 	// cookie数组
 	Cookies []*http.Cookie `json:"cookies"`
 	// http客户端
@@ -46,30 +42,14 @@ func NewHttpRequest(url string) *httpRequest {
 
 	client := &http.Client{Transport: transport}
 	return &httpRequest{
-		Url:         url,
-		ContentType: FormContentType,
-		Client:      client,
+		Url:    url,
+		Client: client,
 	}
-}
-
-// 设置数据类型
-func (h *httpRequest) SetContentType(contentType string) *httpRequest {
-	if utils.IsEmpty(contentType) {
-		contentType = FormContentType
-	}
-	h.ContentType = contentType
-	return h
 }
 
 // 设置请求头
 func (h *httpRequest) SetHeader(header map[string]string) *httpRequest {
 	h.Header = header
-	return h
-}
-
-// 设置请求体
-func (h *httpRequest) SetBody(body map[string]string) *httpRequest {
-	h.Body = body
 	return h
 }
 
@@ -90,17 +70,35 @@ func (h *httpRequest) SetCookies(cookies []*http.Cookie) *httpRequest {
 }
 
 // Get请求
-func (h *httpRequest) Get() (*http.Response, error) {
-	return h.request(http.MethodGet, nil)
+func (h *httpRequest) Get(data map[string]string) (*http.Response, error) {
+	return h.request(http.MethodGet, FormContentType, handleFormData(data))
 }
 
-// Post请求
-func (h *httpRequest) Post() (*http.Response, error) {
-	return h.request(http.MethodPost, nil)
+// Post json请求
+func (h *httpRequest) Post(data interface{}) (*http.Response, error) {
+	jsonData, err := json.Marshal(data)
+	if err != nil {
+		return nil, err
+	}
+	return h.request(http.MethodPost, JsonContentType, strings.NewReader(string(jsonData)))
+}
+
+// Post表单请求
+func (h *httpRequest) PostForm(data map[string]string) (*http.Response, error) {
+	return h.request(http.MethodPost, FormContentType, handleFormData(data))
+}
+
+// 处理表单数据
+func handleFormData(data map[string]string) io.Reader {
+	values := url.Values{}
+	for k, v := range data {
+		values.Add(k, v)
+	}
+	return strings.NewReader(values.Encode())
 }
 
 // 文件上传
-func (h *httpRequest) UploadFile(fileName, path string) (*http.Response, error) {
+func (h *httpRequest) UploadFile(fileName, path string, data map[string]string) (*http.Response, error) {
 	file, err := os.Open(path)
 	if err != nil {
 		return nil, err
@@ -119,51 +117,32 @@ func (h *httpRequest) UploadFile(fileName, path string) (*http.Response, error) 
 		return nil, err
 	}
 
-	for k, v := range h.Body {
-		w.WriteField(k, v)
+	for k, v := range data {
+		w.WriteField(k, fmt.Sprint(v))
 	}
-
-	h.ContentType = MultipartContentType
-	return h.request(http.MethodPost, body)
+	return h.request(http.MethodPost, MultipartContentType, body)
 }
 
 // 请求
-func (h *httpRequest) request(method string, body io.Reader) (*http.Response, error) {
-	// 处理请求体
-	if h.ContentType == FormContentType { // form表单
-		values := url.Values{}
-		for k, v := range h.Body {
-			values.Add(k, v)
-		}
-		body = strings.NewReader(values.Encode())
-	} else if h.ContentType == JsonContentType { // json格式
-		jsonData, err := json.Marshal(h.Body)
-		if err != nil {
-			return nil, err
-		}
-		body = strings.NewReader(string(jsonData))
-	}
-
+func (h *httpRequest) request(method string, contentType string, body io.Reader) (*http.Response, error) {
 	// 创建请求
 	req, err := http.NewRequest(method, h.Url, body)
 	if err != nil {
 		return nil, err
 	}
 	defer req.Body.Close()
-
 	// 添加请求头
 	for k, v := range h.Header {
 		if strings.ToLower(k) == "host" {
-			req.Host = v
+			req.Host = fmt.Sprint(v)
 		} else {
-			req.Header.Add(k, v)
+			req.Header.Add(k, fmt.Sprint(v))
 		}
 	}
-
+	req.Header.Add("Content-Type", contentType)
 	// 添加Cookie
 	for _, v := range h.Cookies {
 		req.AddCookie(v)
 	}
-
 	return h.Client.Do(req)
 }

@@ -72,6 +72,33 @@ func IsEmpty(o interface{}) bool {
 	return isEmpty(reflect.ValueOf(o))
 }
 
+func IsStruct(o interface{}) bool {
+	if o == nil {
+		return false
+	}
+	v := reflect.ValueOf(o)
+	switch v.Kind() {
+	case reflect.Struct:
+		return true
+	case reflect.Ptr:
+		if v.Elem().Kind() == reflect.Struct {
+			return true
+		}
+	}
+	return false
+}
+
+func IsPtr(o interface{}) bool {
+	if o == nil {
+		return false
+	}
+	v := reflect.ValueOf(o)
+	if v.Kind() == reflect.Ptr {
+		return true
+	}
+	return false
+}
+
 func isEmpty(value reflect.Value) bool {
 	switch value.Kind() {
 	case reflect.String:

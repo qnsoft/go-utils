@@ -9,6 +9,8 @@ import (
 	"github.com/liuchonglin/go-tools/token"
 	"liuchonglin.com/baseCms/controllers/contextUtil"
 	"github.com/satori/go.uuid"
+	"io/ioutil"
+	"encoding/json"
 )
 
 func TestNewHttpRequest(t *testing.T) {
@@ -153,6 +155,14 @@ func TestHttpRequest_Post(t *testing.T) {
 				return
 			}
 			fmt.Printf("httpRequest.Post() = %v\n", got)
+
+			bodyData, err := ioutil.ReadAll(got.Body)
+			if err != nil {
+				panic(err)
+			}
+			got.Cookies()
+			defer got.Body.Close()
+			json.Unmarshal(bodyData, nil)
 		})
 	}
 }
