@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d26ac771-2b6f-42c5-8c21-664c78a4cab0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/maputil/maputil.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commonutil.go" beforeDir="false" afterPath="$PROJECT_DIR$/commonutil.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httputil/httputil.go" beforeDir="false" afterPath="$PROJECT_DIR$/httputil/httputil.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encodeutil/compress.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/encodeutil/compress_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base58util/base58util.go" beforeDir="false" afterPath="$PROJECT_DIR$/encodeutil/base58util.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/httputil/httputil_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/httputil/httputil_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -90,12 +90,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="go" value="11865" />
+          <entry key="go" value="11895" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="11865" />
+          <entry key="Go" value="11895" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.go.postfix.template.usages.trigger">
@@ -108,11 +108,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/httputil/httputil.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="198">
+              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -126,11 +126,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/httputil/httputil_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+            <state relative-caret-position="396">
+              <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+              <folding>
+                <element signature="e#18#130#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -139,7 +142,7 @@
         <entry file="file://$PROJECT_DIR$/maputil/maputil.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="558">
-              <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+              <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -148,7 +151,7 @@
         <entry file="file://$PROJECT_DIR$/maputil/maputil_test.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1530">
-              <caret line="89" column="28" lean-forward="true" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
+              <caret line="89" column="28" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -235,11 +238,11 @@
         <option value="$PROJECT_DIR$/timeutil/timeutil.go" />
         <option value="$PROJECT_DIR$/timeutil/timeutil_test.go" />
         <option value="$PROJECT_DIR$/stringutil/stringutil.go" />
-        <option value="$PROJECT_DIR$/httputil/httputil_test.go" />
         <option value="$PROJECT_DIR$/commonutil.go" />
         <option value="$PROJECT_DIR$/maputil/maputil.go" />
         <option value="$PROJECT_DIR$/maputil/maputil_test.go" />
         <option value="$PROJECT_DIR$/httputil/httputil.go" />
+        <option value="$PROJECT_DIR$/httputil/httputil_test.go" />
       </list>
     </option>
   </component>
@@ -320,31 +323,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestStructToMap in github.com/liuchonglin/go-utils/maputil">
-    <configuration name="TestHttpRequest_Get in github.com/liuchonglin/go-utils/httputil" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-utils" />
-      <working_directory value="$PROJECT_DIR$/httputil" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/liuchonglin/go-utils/httputil" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestHttpRequest_Get$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestHttpRequest_Post in github.com/liuchonglin/go-utils/httputil" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="go-utils" />
-      <working_directory value="$PROJECT_DIR$/httputil" />
-      <go_parameters value="-i" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="github.com/liuchonglin/go-utils/httputil" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestHttpRequest_Post$" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Test.Test_httpRequest_Get in github.com/liuchonglin/go-utils/httputil">
     <configuration name="TestNewHttpRequest in github.com/liuchonglin/go-utils/httputil" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-utils" />
       <working_directory value="$PROJECT_DIR$/httputil" />
@@ -357,63 +336,72 @@
       <pattern value="^TestNewHttpRequest$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestStructToMap in github.com/liuchonglin/go-utils/maputil" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSetTimeout in github.com/liuchonglin/go-utils/httputil" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-utils" />
-      <working_directory value="$PROJECT_DIR$/maputil" />
+      <working_directory value="$PROJECT_DIR$/httputil" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/liuchonglin/go-utils/maputil" />
+      <package value="github.com/liuchonglin/go-utils/httputil" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestStructToMap$" />
+      <pattern value="^TestSetTimeout$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestStructToMapJson in github.com/liuchonglin/go-utils/maputil" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="Test_SetHeader in github.com/liuchonglin/go-utils/httputil" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-utils" />
-      <working_directory value="$PROJECT_DIR$/maputil" />
+      <working_directory value="$PROJECT_DIR$/httputil" />
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="PACKAGE" />
-      <package value="github.com/liuchonglin/go-utils/maputil" />
+      <package value="github.com/liuchonglin/go-utils/httputil" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestStructToMapJson$" />
+      <pattern value="^Test_SetHeader$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_httpRequest_Get in github.com/liuchonglin/go-utils/httputil" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-utils" />
+      <working_directory value="$PROJECT_DIR$/httputil" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/liuchonglin/go-utils/httputil" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^Test_httpRequest_Get$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_httpRequest_SetCookies in github.com/liuchonglin/go-utils/httputil" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-utils" />
+      <working_directory value="$PROJECT_DIR$/httputil" />
+      <go_parameters value="-i" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/liuchonglin/go-utils/httputil" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^Test_httpRequest_SetCookies$" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Go Test.TestNewHttpRequest in github.com/liuchonglin/go-utils/httputil" />
-      <item itemvalue="Go Test.TestHttpRequest_Get in github.com/liuchonglin/go-utils/httputil" />
-      <item itemvalue="Go Test.TestHttpRequest_Post in github.com/liuchonglin/go-utils/httputil" />
-      <item itemvalue="Go Test.TestStructToMap in github.com/liuchonglin/go-utils/maputil" />
-      <item itemvalue="Go Test.TestStructToMapJson in github.com/liuchonglin/go-utils/maputil" />
+      <item itemvalue="Go Test.Test_SetHeader in github.com/liuchonglin/go-utils/httputil" />
+      <item itemvalue="Go Test.Test_httpRequest_SetCookies in github.com/liuchonglin/go-utils/httputil" />
+      <item itemvalue="Go Test.TestSetTimeout in github.com/liuchonglin/go-utils/httputil" />
+      <item itemvalue="Go Test.Test_httpRequest_Get in github.com/liuchonglin/go-utils/httputil" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestStructToMap in github.com/liuchonglin/go-utils/maputil" />
-        <item itemvalue="Go Test.TestStructToMapJson in github.com/liuchonglin/go-utils/maputil" />
-        <item itemvalue="Go Test.TestHttpRequest_Post in github.com/liuchonglin/go-utils/httputil" />
-        <item itemvalue="Go Test.TestHttpRequest_Get in github.com/liuchonglin/go-utils/httputil" />
+        <item itemvalue="Go Test.Test_httpRequest_Get in github.com/liuchonglin/go-utils/httputil" />
+        <item itemvalue="Go Test.TestSetTimeout in github.com/liuchonglin/go-utils/httputil" />
+        <item itemvalue="Go Test.Test_httpRequest_SetCookies in github.com/liuchonglin/go-utils/httputil" />
+        <item itemvalue="Go Test.Test_SetHeader in github.com/liuchonglin/go-utils/httputil" />
         <item itemvalue="Go Test.TestNewHttpRequest in github.com/liuchonglin/go-utils/httputil" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestStructToMapJson_in_github_com_liuchonglin_go-utils_maputil - 2019.04.04 at 15h 58m 30s.xml">
-      <configuration name="TestStructToMapJson in github.com/liuchonglin/go-utils/maputil" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestStructToMapJson_in_github_com_liuchonglin_go-utils_maputil - 2019.04.04 at 15h 59m 17s.xml">
-      <configuration name="TestStructToMapJson in github.com/liuchonglin/go-utils/maputil" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestStructToMap_in_github_com_liuchonglin_go-utils_maputil - 2019.04.04 at 15h 59m 24s.xml">
-      <configuration name="TestStructToMap in github.com/liuchonglin/go-utils/maputil" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestStructToMapJson_in_github_com_liuchonglin_go-utils_maputil - 2019.04.04 at 15h 59m 38s.xml">
-      <configuration name="TestStructToMapJson in github.com/liuchonglin/go-utils/maputil" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestStructToMapJson_in_github_com_liuchonglin_go-utils_maputil - 2019.04.04 at 15h 59m 43s.xml">
-      <configuration name="TestStructToMapJson in github.com/liuchonglin/go-utils/maputil" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestStructToMap_in_github_com_liuchonglin_go-utils_maputil - 2019.04.04 at 17h 59m 53s.xml">
       <configuration name="TestStructToMap in github.com/liuchonglin/go-utils/maputil" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -429,13 +417,28 @@
     <history-entry file="TestStructToMap_in_github_com_liuchonglin_go-utils_maputil - 2019.04.04 at 18h 03m 52s.xml">
       <configuration name="TestStructToMap in github.com/liuchonglin/go-utils/maputil" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestNewHttpRequest_in_github_com_liuchonglin_go-utils_httputil - 2019.04.07 at 13h 32m 13s.xml">
+      <configuration name="TestNewHttpRequest in github.com/liuchonglin/go-utils/httputil" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="Test_SetHeader_in_github_com_liuchonglin_go-utils_httputil - 2019.04.07 at 13h 32m 18s.xml">
+      <configuration name="Test_SetHeader in github.com/liuchonglin/go-utils/httputil" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="Test_httpRequest_SetCookies_in_github_com_liuchonglin_go-utils_httputil - 2019.04.07 at 13h 32m 24s.xml">
+      <configuration name="Test_httpRequest_SetCookies in github.com/liuchonglin/go-utils/httputil" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSetTimeout_in_github_com_liuchonglin_go-utils_httputil - 2019.04.07 at 13h 32m 29s.xml">
+      <configuration name="TestSetTimeout in github.com/liuchonglin/go-utils/httputil" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="Test_httpRequest_Get_in_github_com_liuchonglin_go-utils_httputil - 2019.04.07 at 13h 32m 35s.xml">
+      <configuration name="Test_httpRequest_Get in github.com/liuchonglin/go-utils/httputil" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.28540772" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.28540772" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -443,7 +446,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.21566264" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.21566264" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -777,24 +780,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/httputil/httputil_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/maputil/maputil.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
-          <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <caret line="35" column="27" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/maputil/maputil_test.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
-          <caret line="89" column="28" lean-forward="true" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
+          <caret line="89" column="28" selection-start-line="89" selection-start-column="28" selection-end-line="89" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -824,8 +820,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/httputil/httputil.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="198">
+          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/httputil/httputil_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+          <folding>
+            <element signature="e#18#130#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
